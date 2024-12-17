@@ -71,7 +71,13 @@ In the event of a failed deployment, the following rollback procedures will be e
 
 ---
 
-## 6. AI Agent Prompt for Next Steps
+## 6. Additional Documents
+1. **Feedback Form**: See `Feedback_Form.md` for gathering post-deployment user feedback.
+2. **Post-Deployment Log**: Refer to `Post-Deployment-Log.md` for documenting final results, issues, and observations.
+
+---
+
+## 7. AI Agent Prompt for Next Steps
 **Prompt**:
 "I have created a Deployment Checklist for the Skee-Ball League Management Application. It includes pre-deployment tasks, deployment steps, post-deployment validation, and a rollback plan. Below is the full content:
 
@@ -83,5 +89,4 @@ Using this document, please:
 3. Provide a step-by-step guide for executing the deployment process, assuming I am learning and need actionable, beginner-friendly instructions."
 
 ---
-
 
