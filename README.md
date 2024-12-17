@@ -71,7 +71,7 @@ Details of each team member can be found in **`00_Documentation/Team_Description
 │   │   ├── wireframe_homepage.png
 │   │   └── wireframe_team_dashboard.png
 │   ├── User_Flow_Diagrams/           # User interaction flows
-│   └── Architecture_Diagram.md       # App system architecture diagram
+│       └── Architecture_Diagram.md   # App system architecture diagram
 │
 ├── 04_Development/
 │   ├── frontend/                     # Frontend code (React, HTML/CSS)
