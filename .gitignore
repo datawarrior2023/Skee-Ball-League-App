@@ -1,1 +1,68 @@
+# .gitignore for Skee-Ball League Management Application
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+log/
+pids/
+
+# Environment variables
+.env
+.env.*
+
+# Build output
+/dist
+/build
+/.cache
+
+# Database
+*.sqlite3
+*.db
+*.db-journal
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+*.sw?
+
+# Testing
+/coverage
+
+# Deployment
+Dockerfile
+*.tar
+
+# Git
+.gitignore
+
+# Documentation and artifacts
+*.log
+*.bak
+*.out
+
+debug.log*
+
+# Specific exclusions
+/database_backups
+/test_env
+
+# Local files
+*.local
+
+# Generated files
+*.min.*
+*.map
+*.lock
 
