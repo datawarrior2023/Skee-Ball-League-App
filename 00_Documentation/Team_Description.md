@@ -114,5 +114,5 @@ The team will collaborate using structured workflows:
 
 ---
 
-**Note**: Each team member plays a simulated role in this project. As the sole developer, a single person using AI Agents will "wear each hat" as needed, ensuring clear documentation, development, and delivery at each phase of the project.
+**Note**: Each team member plays a simulated role in this project. As the sole developer, a single person will "wear each hat" as needed, ensuring clear documentation, development, and delivery at each phase of the project.
 
