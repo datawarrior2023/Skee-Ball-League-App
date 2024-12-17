@@ -79,3 +79,18 @@ The purpose of this interview guide is to gather detailed requirements, understa
 ## Notes
 - Add any specific observations or insights gained during the interview here.
 
+---
+
+## AI Agent Prompt for Next Steps
+**Prompt**:
+"I have completed a stakeholder interview to gather the requirements for a Skee-Ball League Management Application. Below are the questions and answers collected:
+
+<Insert All Interview Questions and Answers Here>
+
+Using the provided information, please proceed to the next step in the application development process. 
+- If there is missing information or ambiguity that prevents creating clear deliverables, identify the missing details and provide follow-up questions to clarify. 
+- Based on standard best practices, outline the next deliverables I should focus on (e.g., Business Requirements Document, user stories, system design, or project plan).
+- Remember, I am learning this process and may need simplified explanations and guidance for each step. Provide feedback in a clear, logical order and suggest any tools or techniques to help with the next phase."
+
+---
+
