@@ -4,6 +4,12 @@ The project utilizes **AI tools and simulated team roles** to assist with the en
 
 ---
 
+## **Business Name**  
+**"AI Edge Solutions"**  
+- A fictional tech solutions company that develops applications for niche markets and small businesses, like Skee-Ball leagues.  
+
+---
+
 ## **Project Overview**  
 
 This application is being built to replace the manual Google Sheets tracking system for a local Skee-Ball league.  
@@ -20,11 +26,35 @@ Simulated team members will fulfill key project roles (Business Analyst, Develop
 
 ---
 
+## **Simulated Roles**  
+
+### **Team Members**  
+The simulated team from **AI Edge Solutions** consists of:  
+
+1. **Emily Hart** (Business Analyst)  
+2. **James Lee** (Project Manager)  
+3. **Sarah Cohen** (UX/UI Designer)  
+4. **Mike Ramirez** (Full Stack Developer)  
+5. **Chloe Nguyen** (QA Tester)  
+
+Details of each team member can be found in **`00_Documentation/Team_Description.md`**.  
+
+---
+
 ## **Directory Structure**  
 
 ```plaintext
 📦 skee-ball-league-app/
 │
+├── 00_Documentation/
+│   ├── Team_Description.md           # Descriptions of team members and roles
+│   ├── Business_Overview.md          # AI Edge Solutions business overview
+│   ├── AI_Notes_Summaries/           # AI chat logs, summaries, and key insights
+│   │   ├── AI_Notes_Session1.md      # Notes from early brainstorming sessions
+│   │   ├── AI_Notes_Session2.md      # Later AI-assisted notes
+│   │   └── Optimized_Prompts.md      # Optimized prompts and relevant responses
+│   └── Process_Documentation.md      # Overview of the process being followed
+|
 ├── 01_Requirements/
 │   ├── BRD_Requirements.md           # Business Requirements Document
 │   ├── User_Stories.md               # List of User Stories
@@ -65,18 +95,6 @@ Simulated team members will fulfill key project roles (Business Analyst, Develop
 
 ---
 
-## **Simulated Roles**  
-
-To maintain clarity and realism during development, the following **team personas** will represent different project roles:  
-
-1. **Emily Hart** (Business Analyst)  
-2. **James Lee** (Project Manager)  
-3. **Sarah Cohen** (UX/UI Designer)  
-4. **Mike Ramirez** (Full Stack Developer)  
-5. **Chloe Nguyen** (QA Tester)  
-
----
-
 ## **Development Process**  
 
 This project follows an Agile-inspired iterative workflow:  
@@ -109,6 +127,14 @@ For now, this is a personal learning project. If you're here to follow along or 
 
 - Current Stage: Requirements Gathering  
 - Next Step: Stakeholder Interviews and BRD Creation  
+
+---
+
+### **AI Resources**  
+AI-assisted notes, chats, and optimized prompts are stored in:  
+- **`00_Documentation/AI_Notes_Summaries/`**  
+
+You can refer to **`Optimized_Prompts.md`** for reusable prompts and their relevant responses.  
 
 ---
 
