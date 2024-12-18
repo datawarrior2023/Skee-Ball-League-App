@@ -1,81 +1,106 @@
-# Test Cases
+# Testing Report
 
 ## Purpose
-This document outlines the test cases for the Skee-Ball League Management Application to validate functionality, performance, and usability across key features. Each test case includes clear steps, expected outcomes, and status tracking.
+This document provides a summary of the testing activities conducted for the Skee-Ball League Management Application. It includes details on test execution, results, identified bugs, and overall application readiness for deployment.
 
 ---
 
-## 1. Test Case Structure
-Each test case will include the following components:
-- **Test Case ID**: Unique identifier for each test case.
-- **Feature**: The feature being tested.
-- **Test Scenario**: Description of what the test validates.
-- **Test Steps**: Step-by-step instructions to execute the test.
-- **Expected Result**: The anticipated outcome if the test passes.
-- **Actual Result**: The observed outcome.
-- **Status**: Pass, Fail, or Blocked.
-- **Tester**: Responsible team member.
-- **Comments**: Notes on issues or observations.
+## 1. Test Summary
+| **Category**                  | **Details**                          |
+|-------------------------------|--------------------------------------|
+| **Application Name**          | Skee-Ball League Management App      |
+| **Testing Start Date**        | [MM/DD/YYYY]                         |
+| **Testing End Date**          | [MM/DD/YYYY]                         |
+| **Tested By**                 | Chloe Nguyen                         |
+| **Testing Environment**       | [Test/Production/Staging]            |
+| **Total Test Cases**          | [Total Number]                       |
+| **Passed**                    | [Number of Test Cases Passed]        |
+| **Failed**                    | [Number of Test Cases Failed]        |
+| **Blocked**                   | [Number of Blocked Test Cases]       |
 
 ---
 
-## 2. Test Cases
+## 2. Test Execution Results
+### **Overall Results**
+| **Status**      | **Number of Cases** | **Percentage** |
+|-----------------|---------------------|----------------|
+| Passed          | [Number]            | [Percentage]%  |
+| Failed          | [Number]            | [Percentage]%  |
+| Blocked         | [Number]            | [Percentage]%  |
+| **Total**       | [Total Test Cases]  | 100%           |
 
-### **1. Login System**
-| **Test Case ID** | **Feature**         | **Test Scenario**                      | **Test Steps**                                                                 | **Expected Result**               | **Actual Result** | **Status** | **Tester**       | **Comments**          |
-|------------------|---------------------|---------------------------------------|------------------------------------------------------------------------------|----------------------------------|-------------------|------------|-----------------|-----------------------|
-| TC-001           | Login System        | Verify login with valid credentials   | 1. Enter valid username and password.<br>2. Click "Login".                    | User is redirected to dashboard.  |                   | Not Started| Chloe Nguyen     |                       |
-| TC-002           | Login System        | Verify login with invalid credentials | 1. Enter invalid username/password.<br>2. Click "Login".                      | Error message displayed: "Invalid credentials". |                   | Not Started| Chloe Nguyen     |                       |
-| TC-003           | Login System        | Verify role-based redirection         | 1. Log in as Admin.<br>2. Log in as Captain.<br>3. Log in as Player.           | User is redirected to respective dashboard. |                   | Not Started| Chloe Nguyen     |                       |
-| TC-004           | Login System        | Verify logout functionality           | 1. Log in successfully.<br>2. Click "Logout".                                | User is logged out and returned to Login page. |                   | Not Started| Chloe Nguyen     |                       |
-
-### **2. Score Input System**
-| **Test Case ID** | **Feature**         | **Test Scenario**                      | **Test Steps**                                                                 | **Expected Result**               | **Actual Result** | **Status** | **Tester**       | **Comments**          |
-|------------------|---------------------|---------------------------------------|------------------------------------------------------------------------------|----------------------------------|-------------------|------------|-----------------|-----------------------|
-| TC-005           | Score Input System  | Verify score input for teams          | 1. Log in as Admin.<br>2. Select teams.<br>3. Enter valid scores.<br>4. Submit.| Scores are saved successfully.    |                   | Not Started| Chloe Nguyen     |                       |
-| TC-006           | Score Input System  | Validate invalid score format         | 1. Log in as Admin.<br>2. Enter non-numeric scores.<br>3. Submit.              | Validation error is displayed.   |                   | Not Started| Chloe Nguyen     |                       |
-| TC-007           | Score Input System  | Verify leaderboard updates            | 1. Input valid scores.<br>2. Navigate to Leaderboard.                         | Leaderboard reflects new scores.  |                   | Not Started| Chloe Nguyen     |                       |
-
-### **3. Leaderboard Display**
-| **Test Case ID** | **Feature**         | **Test Scenario**                      | **Test Steps**                                                                 | **Expected Result**               | **Actual Result** | **Status** | **Tester**       | **Comments**          |
-|------------------|---------------------|---------------------------------------|------------------------------------------------------------------------------|----------------------------------|-------------------|------------|-----------------|-----------------------|
-| TC-008           | Leaderboard Display | Verify leaderboard accuracy           | 1. Input scores.<br>2. View leaderboard.                                      | Rankings match inputted scores.   |                   | Not Started| Chloe Nguyen     |                       |
-| TC-009           | Leaderboard Display | Verify sorting functionality          | 1. Navigate to Leaderboard.<br>2. Sort by wins/losses.                        | Leaderboard sorts correctly.      |                   | Not Started| Chloe Nguyen     |                       |
-
-### **4. Team Management**
-| **Test Case ID** | **Feature**         | **Test Scenario**                      | **Test Steps**                                                                 | **Expected Result**               | **Actual Result** | **Status** | **Tester**       | **Comments**          |
-|------------------|---------------------|---------------------------------------|------------------------------------------------------------------------------|----------------------------------|-------------------|------------|-----------------|-----------------------|
-| TC-010           | Team Management     | Verify adding a new team              | 1. Log in as Admin.<br>2. Add team name and player list.<br>3. Submit.         | Team is added successfully.       |                   | Not Started| Chloe Nguyen     |                       |
-| TC-011           | Team Management     | Verify editing team details           | 1. Log in as Admin.<br>2. Edit existing team details.<br>3. Submit changes.   | Team details are updated.         |                   | Not Started| Chloe Nguyen     |                       |
+### **Feature-Wise Results**
+| **Feature**              | **Total Cases** | **Passed** | **Failed** | **Blocked** |
+|--------------------------|-----------------|------------|------------|-------------|
+| Login System             | [Number]        | [Number]   | [Number]   | [Number]    |
+| Score Input System       | [Number]        | [Number]   | [Number]   | [Number]    |
+| Leaderboard Display      | [Number]        | [Number]   | [Number]   | [Number]    |
+| Team Management          | [Number]        | [Number]   | [Number]   | [Number]    |
+| Match Scheduling         | [Number]        | [Number]   | [Number]   | [Number]    |
+| Player Stats Display     | [Number]        | [Number]   | [Number]   | [Number]    |
 
 ---
 
-## 3. Test Status Legend
-- **Not Started**: Test has not been executed.
-- **Pass**: Test case executed successfully with expected results.
-- **Fail**: Test case failed to produce expected results.
-- **Blocked**: Test execution cannot proceed due to unresolved issues or dependencies.
+## 3. Key Findings
+### **Passes**
+1. [Feature/Functionality] passed with expected results.
+2. [Feature/Functionality] performed as intended.
+
+### **Failures**
+| **Test Case ID** | **Feature**       | **Description of Failure**             | **Priority** | **Comments**           |
+|------------------|-------------------|---------------------------------------|--------------|------------------------|
+| TC-002          | Login System      | Invalid credentials not showing error | High         | Needs immediate fix    |
+| TC-006          | Score Input       | Validation not triggering for text input| Medium      | Input needs validation |
+
+### **Blocked Cases**
+| **Test Case ID** | **Feature**        | **Reason for Blockage**               | **Comments**              |
+|------------------|--------------------|--------------------------------------|---------------------------|
+| TC-010          | Team Management     | Backend API endpoint not responding   | Waiting on backend update |
 
 ---
 
-## 4. Tools for Testing
-- **Test Case Tracking**: Google Sheets, Notion, or Excel
-- **Bug Tracking**: GitHub Issues or Trello
-- **Execution**: Manual testing or automated testing frameworks
+## 4. Bug Summary
+### **Bugs Identified**
+| **Bug ID** | **Feature**          | **Description**                     | **Impact**    | **Status**    | **Owner**       |
+|------------|----------------------|------------------------------------|---------------|---------------|-----------------|
+| BUG-001    | Login System         | Error message missing for invalid login | High          | Open          | Mike Ramirez    |
+| BUG-002    | Score Input          | Validation fails for incorrect format | Medium        | Open          | Mike Ramirez    |
+| BUG-003    | Leaderboard Display  | Leaderboard sorting not functional   | Low           | Open          | Mike Ramirez    |
 
 ---
 
-## 5. AI Agent Prompt for Next Steps
+## 5. Recommendations
+1. **Fix Critical Bugs**:
+   - Address issues in login functionality and score input validation.
+2. **Retest Blocked Cases**:
+   - Resolve backend issues and retest the impacted test cases.
+3. **Perform Regression Testing**:
+   - Re-run test cases after bug fixes to ensure no new issues are introduced.
+4. **Performance Optimization**:
+   - Test for application responsiveness and stability under load.
+
+---
+
+## 6. Application Readiness
+| **Criteria**                    | **Status**        | **Comments**                     |
+|---------------------------------|-------------------|----------------------------------|
+| Functional Testing Complete     | [Yes/No]          |                                  |
+| Critical Bugs Resolved          | [Yes/No]          |                                  |
+| User Acceptance Testing (UAT)   | [Yes/No]          | Pending stakeholder approval     |
+| Deployment Ready                | [Yes/No]          | Final validation pending         |
+
+---
+
+## 7. AI Agent Prompt for Next Steps
 **Prompt**:
-"I have created a Test Cases document for the Skee-Ball League Management Application. It includes test cases for login, score input, leaderboard display, and team management. Below is the full content:
+"I have created a Testing Report for the Skee-Ball League Management Application. It includes test results, key findings, and bug summaries. Below is the full content:
 
-<Insert Test Cases Here>
+<Insert Testing Report Here>
 
 Using this document, please:
-1. Review the test cases and identify any missing scenarios, including edge cases.
-2. Suggest additional test cases to validate system functionality comprehensively.
-3. Provide recommendations for executing these test cases efficiently, assuming I am learning and need clear, actionable steps."
+1. Review the report for completeness and suggest improvements where necessary.
+2. Identify any additional test scenarios or edge cases that should be tested.
+3. Provide a structured plan for addressing the identified bugs and preparing the application for deployment, assuming I am learning and need step-by-step guidance."
 
 ---
-
 
