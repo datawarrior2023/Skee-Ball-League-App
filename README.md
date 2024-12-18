@@ -44,53 +44,64 @@ Details of each team member can be found in **`00_Documentation/Team_Description
 ## **Directory Structure**  
 
 ```plaintext
-📦 skee-ball-league-app/
+📦 skee-ball-league-app/              # Root directory for the Skee-Ball League Management Application
 │
-├── 00_Documentation/
-│   ├── Team_Description.md           # Descriptions of team members and roles
-│   ├── Business_Overview.md          # AI Edge Solutions business overview
+├── 00_Documentation/                 # Documentation for the project
+│   ├── Team_Description.md           # Descriptions of team members and roles TEMPLATE ADDED
+│   ├── Business_Overview.md          # AI Edge Solutions business overview TEMPLATE ADDED
 │   ├── AI_Notes_Summaries/           # AI chat logs, summaries, and key insights
 │   │   ├── AI_Notes_Session1.md      # Notes from early brainstorming sessions
-│   │   ├── AI_Notes_Session2.md      # Later AI-assisted notes
-│   │   └── Optimized_Prompts.md      # Optimized prompts and relevant responses
-│   └── Process_Documentation.md      # Overview of the process being followed
-|
-├── 01_Requirements/
-│   ├── BRD_Requirements.md           # Business Requirements Document
-│   ├── User_Stories.md               # List of User Stories
-│   ├── Interview_Guide.md            # Stakeholder Interview Template
-│   └── Feature_Priority_Matrix.xlsx  # Prioritization of Features
+│   │   ├── AI_Notes_Session2.md      # Notes from later AI-assisted sessions
+│   │   └── Optimized_Prompts.md      # Optimized prompts and relevant responses TEMPLATE ADDED
+│   └── Process_Documentation.md      # Overview of the process being followed TEMPLATE ADDED
 │
-├── 02_Planning/
-│   ├── Project_Plan.md               # High-level project plan
-│   ├── Task_Timeline.xlsx            # Tasks, timelines, and milestones
-│   └── Risk_Management.md            # Potential risks and mitigations
+├── 01_Requirements/                  # Requirements gathering and planning phase
+│   ├── BRD_Requirements.md           # Business Requirements Document TEMPLATE ADDED
+│   ├── User_Stories.md               # List of user stories TEMPLATE ADDED
+│   ├── Interview_Guide.md            # Stakeholder interview template TEMPLATE ADDED
+│   ├── Feature_Priority_Matrix.md    # Feature prioritization document TEMPLATE ADDED
+│   └── Feature_Priority_Matrix.xlsx  # Prioritization matrix in Excel format
 │
-├── 03_Design/
+├── 02_Planning/                      # Planning phase documents
+│   ├── Project_Plan.md               # High-level project plan TEMPLATE ADDED
+│   ├── Task_Timeline.xlsx            # Task, timeline, and milestone tracker
+│   └── Risk_Management.md            # Potential risks and mitigations TEMPLATE ADDED
+│
+├── 03_Design/                        # Design assets and outlines
 │   ├── UX_UI_Wireframes/             # Wireframes and mockups
-│   │   ├── wireframe_homepage.png
-│   │   └── wireframe_team_dashboard.png
-│   ├── User_Flow_Diagrams/           # User interaction flows
-│       └── Architecture_Diagram.md   # App system architecture diagram
+│   │   ├── Wireframe_Outline.md      # Wireframe structure and key screens TEMPLATE ADDED
+│   │   ├── wireframe_homepage.png    # Wireframe for homepage
+│   │   └── wireframe_team_dashboard.png # Wireframe for team dashboard
+│   ├── User_Flow_Diagrams/           # User interaction and navigation flows
+│   │   └── User_Flow_Diagram.md      # User flow diagrams for the application TEMPLATE ADDED
+│   └── Architecture_Diagram.md       # System architecture diagram TEMPLATE ADDED
 │
-├── 04_Development/
+├── 04_Development/                   # Development phase structure
 │   ├── frontend/                     # Frontend code (React, HTML/CSS)
+│   │   └── frontend.md               # Notes and instructions for frontend development
 │   ├── backend/                      # Backend code (Node.js, APIs)
+│   │   └── backend.md                # Notes and instructions for backend development
 │   ├── database/                     # Database scripts/schema
-│   └── dev_logs/                     # Development logs & notes
+│   │   └── database.md               # Notes for database setup
+│   ├── dev_logs/                     # Development logs and notes
+│   │   └── dev_logs.md               # Logs for tracking development progress
+│   ├── Feature_Dev_Checklist.md      # Checklist for feature development TEMPLATE ADDED
+│   └── Architecture_Diagram.md       # System architecture diagram TEMPLATE ADDED
 │
-├── 05_Testing/
-│   ├── Test_Cases.md                 # List of test cases
-│   ├── Bug_Tracking_Log.xlsx         # Bugs and resolutions log
-│   └── Testing_Report.md             # Summary of testing activities
+├── 05_Testing/                       # Testing phase documents
+│   ├── Bug_Tracking_Log.xlsx         # Log for tracking bugs during testing
+│   ├── Test_Cases.md                 # Test cases for functionality validation TEMPLATE ADDED
+│   ├── Testing_Checklist.md          # Checklist to track all testing activities TEMPLATE ADDED
+│   └── Testing_Report.md             # Final report summarizing testing results
 │
-├── 06_Deployment/
-│   ├── Deployment_Checklist.md       # Steps to deploy the application
-│   ├── Feedback_Form.md              # Template to gather user feedback
-│   └── Post-Deployment_Log.md        # Notes after deployment
+├── 06_Deployment/                    # Deployment and post-deployment phase
+│   ├── Deployment_Checklist.md       # Checklist for deployment tasks TEMPLATE ADDED
+│   ├── Feedback_Form.md              # Form for collecting user feedback TEMPLATE ADDED
+│   └── Post-Deployment-Log.md        # Log of results, issues, and observations TEMPLATE ADDED
 │
-├── .gitignore                        # Git ignore file
-└── README.md                         # Project overview
+├── .gitignore                        # Specifies files to ignore in version control
+└── README.md                         # Overview of the project and its structure
+
 ```
 
 ---
