@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeeball League Management</title>
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <style>
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .status {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- League Status Section -->
+        <div class="section">
+            <h3>League Status</h3>
+            <div id="leagueStatus">
+                <p>Current Season: <span id="currentSeason">Loading...</span></p>
+                <p>Active Teams: <span id="activeTeams">Loading...</span></p>
+                <p>Next Match Date: <span id="nextMatchDate">Loading...</span></p>
+            </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <div class="section">
+            <h3>Quick Actions</h3>
+            <div class="button-container">
+                <button onclick="handleScoreEntry()">Enter Scores</button>
+                <button onclick="handleScheduleView()">View Schedule</button>
+            </div>
+            <div class="button-container">
+                <button onclick="handleStandingsView()">Standings</button>
+                <button onclick="handleStatsView()">Statistics</button>
+            </div>
+        </div>
+
+        <!-- Team Management Section -->
+        <div class="section">
+            <h3>Team Management</h3>
+            <select id="teamSelect" aria-label="Team selection" onchange="handleTeamSelect(this.value)">
+              <option value="">Select Team...</option>
+            </select>
+            <div class="button-container">
+                <button onclick="handleTeamEdit()">Edit Team</button>
+                <button onclick="handleRosterManagement()">Manage Roster</button>
+            </div>
+        </div>
+
+        <!-- Player Management Section -->
+        <div class="section">
+            <h3>Player Management</h3>
+            <select id="playerSelect" aria-label="Player selection" onchange="handlePlayerSelect(this.value)">
+              <option value="">Select Player...</option>
+            </select>
+            <div class="button-container">
+                <button onclick="handlePlayerEdit()">Edit Player</button>
+                <button onclick="handlePlayerStats()">View Stats</button>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div id="statusMessage" class="status hidden"></div>
+        <div id="loading" class="loading">Processing... Please wait...</div>
+    </div>
+
+    <script>
+        // Initialize when the page loads
+        window.onload = function() {
+            initializeSidebar();
+        };
+
+        function initializeSidebar() {
+            loadLeagueStatus();
+            loadTeams();
+            loadPlayers();
+        }
+
+        function loadLeagueStatus() {
+            showLoading();
+            google.script.run
+                .withSuccessHandler(updateLeagueStatus)
+                .withFailureHandler(handleError)
+                .getLeagueStatus();
+        }
+
+        function updateLeagueStatus(status) {
+            if (status) {
+                document.getElementById('currentSeason').textContent = status.seasonName || 'N/A';
+                document.getElementById('activeTeams').textContent = status.teamCount || '0';
+                document.getElementById('nextMatchDate').textContent = status.nextMatchDate || 'N/A';
+            }
+            hideLoading();
+        }
+
+        function loadTeams() {
+            google.script.run
+                .withSuccessHandler(updateTeamSelect)
+                .withFailureHandler(handleError)
+                .getActiveTeams();
+        }
+
+        function updateTeamSelect(teams) {
+            const select = document.getElementById('teamSelect');
+            select.innerHTML = '<option value="">Select Team...</option>';
+            if (teams && teams.length) {
+                teams.forEach(team => {
+                    const option = document.createElement('option');
+                    option.value = team.teamID;
+                    option.textContent = team.teamName;
+                    select.appendChild(option);
+                });
+            }
+        }
+
+        function loadPlayers() {
+            google.script.run
+                .withSuccessHandler(updatePlayerSelect)
+                .withFailureHandler(handleError)
+                .getActivePlayers();
+        }
+
+        function updatePlayerSelect(players) {
+            const select = document.getElementById('playerSelect');
+            select.innerHTML = '<option value="">Select Player...</option>';
+            if (players && players.length) {
+                players.forEach(player => {
+                    const option = document.createElement('option');
+                    option.value = player.playerID;
+                    option.textContent = `${player.firstName} ${player.lastName}`;
+                    select.appendChild(option);
+                });
+            }
+        }
+
+        function showMessage(message, isError = false) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${isError ? 'status-error' : 'status-success'}`;
+            statusDiv.style.display = 'block';
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function handleError(error) {
+            hideLoading();
+            showMessage(error.message || 'An error occurred', true);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        // Handler functions for buttons and selects
+        function handleScoreEntry() {
+            google.script.run.showScoreEntry();
+        }
+
+        function handleScheduleView() {
+            google.script.run.showSchedule();
+        }
+
+        function handleStandingsView() {
+            google.script.run.showStandings();
+        }
+
+        function handleStatsView() {
+            google.script.run.showStats();
+        }
+
+        function handleTeamSelect(teamId) {
+            if (teamId) {
+                showLoading();
+                google.script.run
+                    .withSuccessHandler(updateTeamDetails)
+                    .withFailureHandler(handleError)
+                    .getTeamDetails(teamId);
+            }
+        }
+
+        function handlePlayerSelect(playerId) {
+            if (playerId) {
+                showLoading();
+                google.script.run
+                    .withSuccessHandler(updatePlayerDetails)
+                    .withFailureHandler(handleError)
+                    .getPlayerDetails(playerId);
+            }
+        }
+    </script>
+</body>
+</html>
